@@ -1,6 +1,5 @@
-package com.concurrency.mall.example;
+package com.concurrency.mall.example.count;
 
-import com.concurrency.mall.annotation.NotThreadSafe;
 import com.concurrency.mall.annotation.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;

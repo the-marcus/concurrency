@@ -1,4 +1,4 @@
-package com.concurrency.mall.example;
+package com.concurrency.mall.example.atomic;
 
 import com.concurrency.mall.annotation.NotThreadSafe;
 import com.concurrency.mall.annotation.ThreadSafe;
