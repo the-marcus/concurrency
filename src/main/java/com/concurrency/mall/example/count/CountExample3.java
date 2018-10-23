@@ -46,6 +46,7 @@ public class CountExample3 {
                     add();
                     semaphore.release();
                 }catch (Exception e){
+
                     LOGGER.error("exception",e);
                 }
                 countDownLatch.countDown();

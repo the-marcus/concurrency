@@ -2,16 +2,12 @@ package com.concurrency.mall.example.count;
 
 import com.concurrency.mall.annotation.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.*;
 
 @Slf4j
 @NotThreadSafe
 public class CountExample1 {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CountExample1.class);
 
     public static int clientTotal  = 1000;
 
@@ -34,13 +30,13 @@ public class CountExample1 {
                     add();
                     semaphore.release();
                 }catch (Exception e){
-                    LOGGER.error("exception",e);
+                    log.error("exception",e);
                 }
                 countDownLatch.countDown();
             });
         }
         countDownLatch.await();
         executorService.shutdown();
-        LOGGER.info("count:{}",count);
+        log.info("count:{}",count);
     }
 }

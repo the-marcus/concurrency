@@ -15,8 +15,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @ThreadSafe
 public class CountExample2 {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CountExample2.class);
-
     public static int clientTotal  = 1000;
 
     public static int ThreadTotal = 200;
@@ -41,13 +39,13 @@ public class CountExample2 {
                     add();
                     semaphore.release();
                 }catch (Exception e){
-                    LOGGER.error("exception",e);
+                    log.error("exception",e);
                 }
                 countDownLatch.countDown();
             });
         }
         countDownLatch.await();
         executorService.shutdown();
-        LOGGER.info("count:{}",count.get());
+        log.info("count:{}",count.get());
     }
 }

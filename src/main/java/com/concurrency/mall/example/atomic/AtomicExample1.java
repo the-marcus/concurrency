@@ -27,6 +27,7 @@ public class AtomicExample1 {
         /**最后的结果是4不是5
          * 其中有几句是不执行的。
          * */
-        System.out.println(count);
+        //使用了lombok插件，不需要创建log对象。
+        log.info("count:{}",count);
     }
 }

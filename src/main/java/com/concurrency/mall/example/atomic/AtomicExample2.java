@@ -11,21 +11,21 @@ public class AtomicExample2 {
 
     private static AtomicIntegerFieldUpdater<AtomicExample2> updater =
             AtomicIntegerFieldUpdater.newUpdater(AtomicExample2.class,"count");
-    public volatile int count = 100;
+    public static volatile int count = 100;
 
     private static AtomicExample2 example2 = new AtomicExample2();
 
     public static void main(String[] args) {
         if(updater.compareAndSet(example2,100,120)){
-            System.out.println("success");
+            log.info("success,count : {}",count);
         } else {
-            System.out.println("faild");
+            log.info("failed,count : {}",count);
         }
 
         if(updater.compareAndSet(example2,100,120)){
-            System.out.println("success");
+            log.info("success,count : {}",count);
         } else {
-            System.out.println("faild");
+            log.info("failed,count : {}",count);
         }
     }
 
