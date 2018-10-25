@@ -4,6 +4,9 @@ import com.concurrency.mall.annotation.Recommend;
 import com.concurrency.mall.annotation.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @description: 使用枚举做实例化是最安全的
  * @author: marcus
@@ -36,6 +39,20 @@ public class SingletonExample7 {
         public SingletonExample7 getInstance(){
             return singleton;
         }
+    }
+
+    static final Map<Integer,Integer> map = new HashMap<>();
+    static {
+        map.put(1,10);
+        map.put(2,20);
+        map.put(3,30);
+    }
+
+    public static void main(String[] args) {
+        final Map<Integer,String> map = new HashMap<>();
+
+        System.out.println(map.size());
+
     }
 
 }
