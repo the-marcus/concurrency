@@ -1,12 +1,17 @@
 package com.concurrency.mall;
 
-import com.concurrency.mall.example.RequestHolder;
+import com.concurrency.mall.example.threadLocal.RequestHolder;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+/**
+ * @description: Filter主要对用户请求进行预处理，接着将请求交给servlet进行响应。
+ * @author: marcus
+ * @date: 2018/11/1
+ */
 @Slf4j
 public class HttpFilter implements Filter {
 
